@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.principal_container {
+    margin: 0;
+    padding: 0;
+    border: solid 2px black;
+    width: 960px;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    flex-wrap: wrap;
+}
