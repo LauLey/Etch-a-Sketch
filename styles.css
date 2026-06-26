@@ -5,11 +5,25 @@
 .principal_container {
     margin: 0;
     padding: 0;
-    border: solid 2px black;
     width: 960px;
     height: 960px;
     display: flex;
-    flex-direction: column;
     background-color: white;
     flex-wrap: wrap;
 }
+
+
+/* //aun no se si mis estilos principales se escriben asi y si deberian estar dentro de la
+//funcion principalCuadricula
+
+function createCuadricula (numDivs) {
+principalContainer.appendChild(div); //por el numDivs mediante bucle
+}
+
+
+div.addEventListener("mousemove" () => {
+    //cambiar el color cuando sienta que el mouse pasa una vez e 
+    // ir oscureciendo gradualmente cada vez que pasa y a la decima vez oscurecer totalmente el div//
+})
+
+principalCuadricula()//segun yo ejecutar esta funcion me mostrara desde el inicio la cuadricula con 16 x 16 divs
