@@ -18,11 +18,13 @@ function createCuadricula (num) {
 }
 
 function removeCuadricula () {
-//escribir funcion para borrar todos los divs
-// existentes dentro del principal Container por si hacen click varias veces en el boton personaliza
+while (principalContainer.children.length>0) {
+    principalContainer.removeChild(principalContainer.lastChild);
+}
 }
 
 reiniciar.addEventListener("click", () => {
+    removeCuadricula ();
     createCuadricula (256);
 })
 
