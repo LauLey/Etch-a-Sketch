@@ -7,12 +7,24 @@ function createCuadricula (num) {
     const size = widthContainer / columns;
     for ( let i = 0; i < num; i++) {
         const div = document.createElement("div");
-        div.style.backgroundColor = "white";
-        div.style.border = "solid 2px black";
-        div.style.margin = "0";
         div.style.height = size + "px";
         div.style.width = size + "px";
-        div.style.boxSizing = "border-box";
+        div.classList.add("celda");
+        div.style.opacity = 1;
+        div.dataset.painted = "false";
+        div.addEventListener("mouseenter", (e) => {
+            const rojo = Math.floor(Math.random() * 256);
+            const verde = Math.floor(Math.random() * 256);
+            const azul = Math.floor(Math.random() * 256);
+            if (e.target.dataset.painted === "false") {
+                e.target.style.backgroundColor = `rgb(${rojo}, ${verde}, ${azul})`;
+            }
+            const estilos = getComputedStyle(e.target);
+            const opacidadActual = parseFloat(estilos.opacity);
+            e.target.style.opacity = Math.max(opacidadActual - 0.1, 0);
+            e.target.dataset.painted = "true";
+            }
+        )
         principalContainer.appendChild(div);
     }
 }
@@ -38,4 +50,5 @@ personaliza.addEventListener("click", () => {
         let numDivs = numero * numero;
         createCuadricula(numDivs);
     }
-    })
+    }
+);
